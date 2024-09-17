@@ -1,0 +1,248 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #6e757d;
+}
+
+.container-navbar {
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.wrapper-navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 15px;
+    width: 100%;
+    height: 80px;
+    background-color: #333;
+    position: fixed;
+    top: 0; /* Pastikan navbar ada di bagian paling atas */
+    left: 0; /* Supaya navbar tetap ada di kiri */
+    z-index: 1000; /* Tambahkan z-index agar navbar tetap di atas elemen lainnya */
+}
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    padding: 15px;
+}
+
+.firstname {
+    color: white;
+    font-weight: 700;
+}
+
+.lastname {
+    color: crimson;
+    font-weight: 400;
+    padding-left: 4px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navbar-li:hover {
+    background-color: crimson;
+    border-radius: 10px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+}
+
+.navbar-khusus:hover {
+    background-color: crimson;
+    border-radius: 10px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-khusus {
+    background-color: red;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.container-main {
+    margin-top: 100px;
+    background-color: #d9d9d9;
+    width: 90%; /* Ubah dari 60% ke 90% */
+    max-width: 1200px; /* Tambahkan max-width */
+    margin: 150px auto;
+    padding: 20px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh; /* Ganti height dengan min-height */
+}
+
+.box-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    width: 100%; /* Tambahkan ini */
+    flex-wrap: wrap; /* Tambahkan ini */
+}
+
+.box-left {
+    width: 50%;
+    padding: 40px;
+    border-radius: 20px;
+;
+}
+
+.box-right {
+    position: relative; /* Tambahkan ini untuk membuat zig-zag menjadi absolut relatif pada box-right */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 7px;
+    background-color: #f4f4f4;
+    margin-right: 30px;
+}
+
+
+.order-item {
+    display: flex;
+    align-items: center;
+}
+
+.order-image {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.items {
+    margin: 5px 0;
+}
+
+.btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #555;
+    transition: 0.5s;
+
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: #333;
+}
+
+.purchase-desc{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* Tambahan untuk efek zig-zag */
+.zig-zag {
+    position: absolute;
+    bottom: -0.2px; /* Posisikan zig-zag tepat di bawah box-right */
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    clip-path: polygon(0 100%, 5% 0%, 10% 100%, 15% 0%, 20% 100%, 25% 0%, 30% 100%, 35% 0%, 40% 100%, 45% 0%, 50% 100%, 55% 0%, 60% 100%, 65% 0%, 70% 100%, 75% 0%, 80% 100%, 85% 0%, 90% 100%, 95% 0%, 100% 100%);
+    background-color: #d9d9d9; /* Sesuaikan dengan warna box-right */
+}
+
+/* Untuk layar kecil seperti mobile */
+@media screen and (max-width: 768px) {
+    .container-main {
+        width: 95%;
+        margin: 100px auto 20px;
+        padding: 10px;
+    }
+
+    .box-content {
+        flex-direction: column;
+    }
+
+    .box-left, .box-right {
+        width: 100%;
+        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .box-right {
+        margin-right: 0;
+    }
+
+    .wrapper-navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .description, .purchase-desc {
+        font-size: 0.9em;
+    }
+}
