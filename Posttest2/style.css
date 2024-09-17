@@ -161,6 +161,11 @@ body {
     text-align: center;
 }
 
+.btn:hover {
+    background-color: #555;
+    transition: 0.5s;
+}
+
 .description {
     display: flex;
     justify-content: space-between;
