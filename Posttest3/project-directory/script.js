@@ -10,32 +10,31 @@ toggle.addEventListener('change', () => {
 let currentIndex = 0;
 const cards = document.querySelectorAll('.card');
 const totalCards = cards.length;
-const visibleCards = 5; // Jumlah kartu yang ditampilkan sekaligus
+const visibleCards = 5; 
 
 function updateCards() {
     // Sembunyikan semua kartu
     cards.forEach((card) => {
-        card.style.display = 'none'; // Sembunyikan semua kartu
+        card.style.display = 'none'; 
     });
     
-    // Tampilkan kartu yang sesuai dengan indeks saat ini
+
     for (let i = 0; i < visibleCards; i++) {
-        const cardIndex = (currentIndex + i) % totalCards; // Menggunakan modulus untuk loop kembali
-        cards[cardIndex].style.display = 'flex'; // Tampilkan kartu yang sesuai
+        const cardIndex = (currentIndex + i) % totalCards; 
+        cards[cardIndex].style.display = 'flex'; 
     }
 }
 
 document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % (totalCards - visibleCards + 1); // Pastikan tidak melampaui jumlah total kartu
+    currentIndex = (currentIndex + 1) % (totalCards - visibleCards + 1); 
     updateCards();
 });
 
 document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalCards - visibleCards + 1) % (totalCards - visibleCards + 1); // Pastikan tidak melampaui jumlah total kartu
+    currentIndex = (currentIndex - 1 + totalCards - visibleCards + 1) % (totalCards - visibleCards + 1); 
     updateCards();
 });
 
-// Initial display
 updateCards();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('click', () => {
             const modal = document.getElementById(`modal${index + 1}`);
             if (modal) {
-                modal.style.display = 'block'; // Pastikan modal ditampilkan
+                modal.style.display = 'block'; 
             }
         });
     });
