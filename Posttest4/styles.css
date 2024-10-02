@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Reset margin dan padding */
 *,
 html {
     margin: 0;
@@ -108,8 +107,8 @@ body {
     color: #666;
     font-size: 14px;
     text-align: center;
-    width: 100%; /* Ensure the span takes the full width of its container */
-    display: block; /* Make the span a block-level element */
+    width: 100%; 
+    display: block; 
 }
 
 .content-right input {
@@ -155,7 +154,6 @@ body {
     margin-top: 100px;
 }
 
-/* Pesan sapaan memenuhi layar */
 #welcomeMessage {
     position: fixed;
     top: 0;
@@ -165,12 +163,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1A2338;  /* Background yang sama dengan box-left untuk kontras */
+    background-color: #1A2338;  
     color: white;
     font-size: 2.5em;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
-    z-index: 1000;  /* Pastikan berada di atas elemen lain */
+    z-index: 1000;  
 }
 
 #welcomeMessage p {
