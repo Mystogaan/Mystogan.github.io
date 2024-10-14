@@ -18,6 +18,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #e0e0e0;
+    border-radius: 8px;
 }
 
 .comment-container th,
@@ -49,42 +50,52 @@ body {
     transition: background-color 0.3s ease;
 }
 
-
 .comment-container th:first-child,
 .comment-container td:first-child {
-    width: 60px;
+    width: 60px; /* Small width for ID */
     border-left: none;
 }
 
-
 .comment-container th:nth-child(2),
 .comment-container td:nth-child(2) {
-    width: 700px;
+    width: 60px; /* Small width for Foto */
 }
 
+.comment-container th:nth-child(3),
+.comment-container td:nth-child(3) {
+    width: 100px; /* Small width for Nama Novel */
+}
+
+.comment-container th:nth-child(4),
+.comment-container td:nth-child(4) {
+    width: 500px; /* Larger width for Komen */
+}
 
 .comment-container th:last-child,
 .comment-container td:last-child {
-    width: 120px;
+    width: 120px; /* Adjusted width for Action */
     border-right: none;
 }
 
-
 .action-icons {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 150px;
 }
 
 .action-icons button {
     border: none;
-    background: none;
+    background-color: rgb(46, 120, 210) ;
     cursor: pointer;
     padding: 5px;
     transition: transform 0.2s ease;
+    width: 30px;
+    height: 30px;
+    font-size: larger;
 }
 
 .action-icons button:hover {
     transform: scale(1.2);
 }
-

@@ -414,10 +414,12 @@ input#darkmodetoggle:checked + label.darkmodetoggle:after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px auto; 
     padding: 20px;
     background-color: #f1f1f1;
-    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    width: 1300px;
 }
 
 .comment-form{
@@ -425,16 +427,17 @@ input#darkmodetoggle:checked + label.darkmodetoggle:after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .form-comment{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1000px;
+    width: 400px;
     padding: 10px;
+    margin: 10px;
 }
+
 @media (max-width: 768px) {
     .navbar {
         display: none;  

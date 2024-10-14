@@ -13,6 +13,8 @@
             echo "<script>alert('Gagal menyimpan perubahan...');</script>";
         }
     }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -194,14 +196,24 @@
         </div>
     </div>
     <div class="comment-container">
-        <h1>Comment Section</h1>
-        <form class="comment-form" action = "home.php" method = "GET" >
-            <textarea class="form-comment"name="comment" id=""></textarea>
-            <button type="submit" name="submit" id="submit">Submit</button>  
-        </form>    
+        <h1>Saran Novel</h1>
+        <br>
+        <form class="comment-form" action="tambah.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="novel_name">Nama Novel</label>
+                <input type="text" class="form-comment" name="novel_name" id="novel_name" placeholder="Masukkan Nama Novel">
+            </div>
+            <div class="form-group">
+                <label for="reason">Alasan</label>
+                <textarea class="form-comment" name="reason" id="reason" placeholder="Masukkan Alasan Kenapa Anda Ingin Novel Ini" style="height: 100px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Gambar Novel</label>
+                <input type="file" class="form-comment" name="image" id="image">
+            </div>  
+            <button type="submit" name="submit" id="submit">Submit</button>
+        </form>
     </div>
-    </div>
-
     <!-- Main Content End -->
     <!-- Include JavaScript -->
     <script src="script/script.js"></script>

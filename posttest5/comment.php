@@ -23,34 +23,35 @@
     <br>
     <br>
     <br>
-    <table class = "comment-container">
+    <table class="comment-container">
         <tr>
             <th>Id</th>
-            <th>Komentar</th>
+            <th>Foto</th>
+            <th>Nama Novel</th>
+            <th>Komen</th>
             <th>Action</th>
         </tr>
         <?php foreach($komentar as $komen): ?>
             <tr>
-            <td><?= $komen['id'] ?></td>
-            <td><?= $komen['comment'] ?></td>
-            <td>
-                <div>
+                <td><?= $komen['id'] ?></td>
+                <td><img src="assets/<?= $komen['foto'] ?>" alt="Foto" width="100"></td>
+                <td><?= $komen['nama_novel'] ?></td>
+                <td><?= $komen['comment'] ?></td>
+                <td class="action-icons">
                     <a href="edit.php?id=<?= $komen['id'] ?>">
                         <button class="edit-data">
-                        <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-pen" style="color: #ffffff;"></i>
                         </button>
                     </a>
-                </div>
-                <div>
                     <a href="delete.php?id=<?= $komen['id'] ?>" onclick="return confirm('Yakin untuk menghapus data ini?')">
                         <button class="delete-data">
-                        <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
                         </button>
                     </a>
-                </div>
-        </tr>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </table>
-        <script src="script/script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
