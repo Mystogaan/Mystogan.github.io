@@ -62,9 +62,9 @@ if (isset($_POST['login'])) {
                 <form id="loginForm" action="index.php" method="POST">
                     <h1>Sign In</h1>
                     <span>Use your email and password</span>
-                    <input type="text" name="name" id="name" placeholder="Name" required>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <input type="text" name="name" id="name" placeholder="Name (Heri)" required>
+                    <input type="email" name="email" id="email" placeholder="Email (heri@gmail.com)" required>
+                    <input type="password" name="password" id="password" placeholder="Password (123)" required>
                     <button type="submit" name="login" id="Login">Log In</button>
                 </form>
             </div>
