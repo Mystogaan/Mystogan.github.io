@@ -177,7 +177,6 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    
+    text-decoration: underline;
+    color: rgb(67, 73, 178);
 }

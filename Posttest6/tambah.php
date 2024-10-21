@@ -1,6 +1,6 @@
 <?php
 require 'koneksi.php';
-
+session_start();
 // Set the default timezone to Asia/Makassar
 date_default_timezone_set('Asia/Makassar');
 
@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     } else {
         $newFileName = date('Y-m-d H.i.s') . '.' . $fileExtension;
         if (move_uploaded_file($tmp_name, __DIR__.'/assets/'.$newFileName)){
-            $sql = "INSERT INTO komen (foto, nama_novel, comment) VALUES ('$newFileName', '$nama_novel', '$comment')";
+            $sql = "INSERT INTO komen (foto, nama_novel, comment, username) VALUES ('$newFileName', '$nama_novel', '$comment', '".$_SESSION['name']."')";
             $result = mysqli_query($conn, $sql);
             if($result) 
             {

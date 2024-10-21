@@ -15,24 +15,23 @@ if (isset($_POST['login'])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     
-    if (mysqli_num_rows($result) === 1) {
-        // Ambil data pengguna
-        $user = mysqli_fetch_assoc($result);
+    if (mysqli_num_rows($result) === 1) {        
         // Pengecekan nama
+        $user = mysqli_fetch_assoc($result);
         if ($name === $user['username']) {
             // Verifikasi password
-            if ($password === $user['password']) {
+            if (password_verify($password, $user['password'])) {
                 // Password benar, login berhasil
                 $_SESSION['name'] = $user['username'];
                 $_SESSION['email'] = $user['email'];
                 echo "<script>alert('Login berhasil!'); window.location.href='home.php';</script>";
             } else {
                 // Password salah
-                echo "<script>alert('Data salah!');</script>";
+                echo "<script>alert('Pass Salah!');</script>";
             }
         } else {
             // Name salah
-            echo "<script>alert('Data salah!');</script>";
+            echo "<script>alert('Nama Salah!');</script>";
         }
     } else {
         // Email tidak ditemukan
@@ -62,10 +61,11 @@ if (isset($_POST['login'])) {
                 <form id="loginForm" action="index.php" method="POST">
                     <h1>Sign In</h1>
                     <span>Use your email and password</span>
-                    <input type="text" name="name" id="name" placeholder="Name (Heri)" required>
-                    <input type="email" name="email" id="email" placeholder="Email (heri@gmail.com)" required>
-                    <input type="password" name="password" id="password" placeholder="Password (123)" required>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                     <button type="submit" name="login" id="Login">Log In</button>
+                    <p>Don't have an account? <a href="register.php">Sign Up</a></p>
                 </form>
             </div>
         </div>
